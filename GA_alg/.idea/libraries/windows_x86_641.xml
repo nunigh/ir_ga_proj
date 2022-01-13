@@ -1,0 +1,38 @@
+<component name="libraryTable">
+  <library name="windows-x86_641">
+    <CLASSES />
+    <JAVADOC />
+    <NATIVE>
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniARToolKitPlus.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniavcodec.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniavdevice.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniavfilter.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniavformat.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniavutil.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jnicvkernels.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jnifreenect.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniopencv_calib3d.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniopencv_contrib.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniopencv_core.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniopencv_features2d.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniopencv_flann.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniopencv_highgui.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniopencv_imgproc.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniopencv_legacy.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniopencv_ml.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniopencv_nonfree.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniopencv_objdetect.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniopencv_photo.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniopencv_stitching.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniopencv_video.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniopencv_videostab.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniPGRFlyCapture.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jnipostproc.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniswresample.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jniswscale.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/jnivideoInputLib.dll" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,47 @@
+trans
+
+	BaseTransformation t = new Translation(-45,-15);
+		BufferedImage res = Transform(img, t, size);
+		
+		WriteImg(0, 0, 200, 230, res, pathRes);
+		
+			ArrayList<Point> real1 = new ArrayList<Point>();
+		real1.add(new Point(47,	80));
+		real1.add(new Point(60,	40));
+		real1.add(new Point(105,	68));
+		real1.add(new Point(79,	99));
+		real1.add(new Point(246,	91));
+		real1.add(new Point(228	,105));
+		real1.add(new Point(90,	245));
+		real1.add(new Point(69,	255));
+		real1.add(new Point(140,	50));
+		real1.add(new Point(145,	75));
+		
+		ArrayList<Point> real2 = new ArrayList<Point>();
+		real2.add(new Point(2,	65));
+		real2.add(new Point(15,	25));
+		real2.add(new Point(60	,53));
+		real2.add(new Point(34	,84));
+		real2.add(new Point(201	,76));
+		real2.add(new Point(183	,90));
+		real2.add(new Point(45	,230));
+		real2.add(new Point(24	,240));
+		real2.add(new Point(95	,35));
+		real2.add(new Point(100	,60));
+
+		
+		------------------------------
+		
+rotation
+
+		BaseTransformation t = new Rotation(-0.26);
+		BufferedImage res = Transform(img, t, size);
+		WriteImg(30, 30, 170, 170, res, pathRes);
+	-----------------------------
+
+scale
+		
+		BaseTransformation t = new Scaling(1/1.5,1/1.5);
+		BufferedImage res = Transform(img, t, size);
+		WriteImg(30, 25, 140, 140, res, pathRes);
+	

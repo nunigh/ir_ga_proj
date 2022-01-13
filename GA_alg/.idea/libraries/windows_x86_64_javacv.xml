@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="windows-x86_64_javacv">
+    <CLASSES />
+    <JAVADOC />
+    <NATIVE>
+      <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>

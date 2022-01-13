@@ -1,0 +1,32 @@
+<component name="libraryTable">
+  <library name="windows-x86_64">
+    <CLASSES />
+    <JAVADOC />
+    <NATIVE>
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/msvcp100.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/msvcr100.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_calib3d246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_contrib246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_core246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_features2d246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_ffmpeg246_64.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_flann246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_gpu246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_highgui246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_imgproc246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_legacy246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_ml246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_nonfree246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_objdetect246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_ocl246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_photo246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_stitching246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_superres246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_ts246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_video246.dll" />
+      <root url="jar://$PROJECT_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64/opencv_videostab246.dll" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>

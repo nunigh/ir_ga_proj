@@ -1,0 +1,39 @@
+Ref Chip #1 : etm_0001.b5.gif ->1.tm0_0002.b5_wind0
+                                                2.tm0_0004.b5_wind0
+                                                3.tm0_0006.b5_wind0
+                                                4.tm0_0008.b5_wind0
+
+Ref Chip #2 : etm_0002.b5.gif ->1.tm0_0002.b5_wind1
+                                                2.tm0_0004.b5_wind1
+                                                3.tm0_0006.b5_wind1
+                                                4.tm0_0008.b5_wind1
+
+Ref Chip #3 : etm_0003.b5.gif ->1.tm0_0002.b5_wind2
+                                                2.tm0_0004.b5_wind2
+                                                3.tm0_0006.b5_wind2
+                                                4.tm0_0008.b5_wind2
+
+Ref Chip #4 : etm_0004.b5.gif ->1.tm0_0002.b5_wind3
+                                                2.tm0_0004.b5_wind3
+                                                3.tm0_0006.b5_wind3
+                                                4.tm0_0008.b5_wind3
+
+Ref Chip #5 : etm_0005.b5.gif ->1.tm0_0002.b5_wind4
+                                                2.tm0_0004.b5_wind4
+                                                3.tm0_0006.b5_wind4
+                                                4.tm0_0008.b5_wind4
+
+Ref Chip #6 : etm_0006.b5.gif ->1.tm0_0002.b5_wind5
+                                                2.tm0_0004.b5_wind5
+                                                3.tm0_0006.b5_wind5
+                                                4.tm0_0008.b5_wind5
+
+Ref Chip #7 : etm_0007.b5.gif ->1.tm0_0002.b5_wind6
+                                                2.tm0_0004.b5_wind6
+                                                3.tm0_0006.b5_wind6
+                                                4.tm0_0008.b5_wind6
+
+Ref Chip #8 : etm_0008.b5.gif ->1.tm0_0002.b5_wind7
+                                                2.tm0_0004.b5_wind7
+                                                3.tm0_0006.b5_wind7
+                                                4.tm0_0008.b5_wind7

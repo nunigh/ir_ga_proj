@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <libelement value="file://C:/Tools/javacv-cppjars/ffmpeg-20130915-git-7ac6c63-windows-x86_64.jar" />
+      <libelement value="jar://C:/Tools/javacv-cppjars/opencv-2.4.6.0-windows-x86_64.jar!/" />
+      <libelement value="file://C:/Tools/OpenCV/opencv/build/java/opencv-246.jar" />
+      <libelement value="file://C:/Tools/javacv-bin/javacv.jar" />
+      <libelement value="file://C:/Tools/matlabcontrol-4.1.0.jar" />
+      <libelement value="file://C:/Tools/javacv-bin/javacv-windows-x86_64.jar" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" /><orderEntry type="module-library" exported="">
+                                                             <library name="opencv-2.4.6.0-windows-x86_64.jar">
+                                                               <CLASSES>
+                                                                 <root url="jar://C:/Tools/javacv-cppjars/opencv-2.4.6.0-windows-x86_64.jar!/" />
+                                                               </CLASSES>
+                                                               <JAVADOC />
+                                                               <SOURCES />
+                                                             </library>
+                                                           </orderEntry>
+                                                           <orderEntry type="library" exported="" name="javacv-windows-x86_64" level="project" />
+                                                           <orderEntry type="library" exported="" name="opencv-2.4.6.0-windows-x86_64" level="project" />
+                                                           <orderEntry type="library" exported="" name="javacpp" level="project" />
+                                                           <orderEntry type="library" exported="" name="javacv" level="project" />
+                                                           <orderEntry type="library" exported="" name="matlabcontrol-4.1.0" level="project" />
+                                                           <orderEntry type="library" exported="" name="opencv-2.4.6.0-windows-x86_64 (2)" level="project" />
+                                                           <orderEntry type="module-library" exported="">
+                                                             <library>
+                                                               <CLASSES />
+                                                               <JAVADOC />
+                                                               <NATIVE>
+                                                                 <root url="jar://$MODULE_DIR$/externalLibs/opencv-2.4.6.0-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64" />
+                                                               </NATIVE>
+                                                               <SOURCES />
+                                                             </library>
+                                                           </orderEntry>
+                                                           <orderEntry type="library" exported="" name="opencv-2.4.6" level="project" />
+
+  </component>
+</module>

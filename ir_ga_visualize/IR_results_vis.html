@@ -14,7 +14,12 @@
 		<script type="text/javascript">
 		if (typeof resultsData  !='undefined')
 		{
-			resultsDataObj = new resultsDataObject(resultsData);
+			// need to exclude shearx & scalse. the original GA doesn't work on it well, so no point to measure improvment on it
+			// also excluding "cond_ncc" since it was a personal test which didn't lead to intresting results.
+			//var relevantResults  = jsonPath(this.resultsData,"$..[?(@.fileMode != 'scale' && @.fileMode != 'shearX' && @.fitnessType != 'COND_NCC')]") 
+			var relevantResults  = jsonPath(this.resultsData,"$..[?(@.fileMode == 'rot' || @.fileMode == 'trans' || @.fileMode == 'combined')]") 
+			console.log (relevantResults)
+			resultsDataObj = new resultsDataObject(relevantResults);
 		}
 		else
 		{
@@ -43,11 +48,11 @@
 		</script>
 		
 				<h1> Select Fitness Method:</h1>
-				<input type="radio" name="fintnessFunc" value="ALL" onclick="onFintessFuncChoose('ALL')"> ALL <br>
-				<input type="radio" name="fintnessFunc" value="HD" onclick="onFintessFuncChoose('NEW_HD')"> HD <br>
+				<input type="radio" name="fintnessFunc" value="ALL" onclick="onFintessFuncChoose('ALL')"> ALL (summary graph only)<br>
+				<input type="radio" name="fintnessFunc" value="HD" onclick="onFintessFuncChoose('HD')"> HD <br>
 				<input type="radio" name="fintnessFunc" value="NCC" onclick="onFintessFuncChoose('NCC')" > NCC <br>
-				<input type="radio" name="fintnessFunc" value="HD2NCC" onclick="onFintessFuncChoose('HD_NCC')" > HD -> NCC <br> 
-				<input type="radio" name="fintnessFunc" value="NCC2HD" onclick="onFintessFuncChoose('NCC_HD')" > NCC -> HD <br>
+				<input type="radio" name="fintnessFunc" value="NCC_HD_NCC_HD" onclick="onFintessFuncChoose('NCC_HD_NCC_HD')" > NCC->HD->NCC->HD <br> 
+				<input type="radio" name="fintnessFunc" value="HD_NCC_HD_NCC" onclick="onFintessFuncChoose('HD_NCC_HD_NCC')" > HD->NCC->HD->NCC <br>
 			</form>
 			<div id="noDataText" style="display:none"> <p> <h2> No Data </h2> </p></div>
 			

@@ -29,6 +29,7 @@ resultsDataObject.prototype.getTasksByFileMode = function (fileMode) {
 	resultsDataObject.prototype.getOriginalRMSEofTasks = function (tasks){
 		return jsonPath (tasks, "$..originalRMSE");
 	}
+
 	
 	resultsDataObject.prototype.tasksIterator = function (array) {
     let nextIndex = 0;
@@ -51,7 +52,8 @@ resultsDataObject.prototype.getTasksByFileMode = function (fileMode) {
 				   getImprovedFitness	: function(){ return obj ["improvedFitness"]} ,
 				   getImprovedCh : function(){ return obj["improvedCh"]},
 				   getReferencedImagePath : function() {return obj["referencedPath"]},
-				   getimprovedImagePath : function() {return obj["improvedImg"]}
+				   getimprovedImagePath : function() {return obj["improvedImg"]},
+				   getAutomaticMode : function() {return obj["useReal"]==false}
 			   }
 		   }
            else

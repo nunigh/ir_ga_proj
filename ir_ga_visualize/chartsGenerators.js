@@ -279,6 +279,7 @@ function generateTable(tasksData) {
 	columns.push({name: "TaskID", getter: "getTaskID"  });
 	columns.push({name: "fileMode", getter: "getFileMode"	});
 	columns.push({name: "fitnessType", getter: "getFitnessType" });
+	columns.push({name: "automatically fetched features", getter: "getAutomaticMode" });
 	columns.push({name: "originalFitness", getter: "getOriginalFitness" , formatter: function(val) {return val.toFixed(3)} });
 	columns.push({name: "improvedFitness", getter: "getImprovedFitness", formatter: function(val) {return val.toFixed(3)} });
 	columns.push({name: "originalRMSE", getter: "getOriginalRMSE", formatter: function(val) {return val.toFixed(2)} });
@@ -317,41 +318,7 @@ function generateTable(tasksData) {
 			}
 		}
 	}
-	/*
-	for (var j = 0; j < scoreColumns.length; j++) {
-			var cell = row.insertCell(-1);
-			
-			curVal = curRes["scoreData"][scoreColumns[j]];
-			cell.innerHTML = curVal
-			if  (scoreColumns[j]=="improvedRMSE"){
-				cell.innerHTML = "<b>" + cell.innerHTML +"</b>";
-				improvedRMSEvalues.push (Number(curVal))
-				curArry = improvedRMSEbyMethod[curRes["taskData"]["fitnessType"]]
-				if (curArry)
-					curArry.push(Number(curVal))
-					
-				resultsByFileMode[curFileMode]["improvedRMSE"].push (Number(curVal))
-				
-			}
-			else if (scoreColumns[j]=="originalRMSE"){
-				origRMSEvalues.push(Number(curVal))
-				resultsByFileMode[curFileMode]["originalRMSE"].push (Number(curVal))
-			}
-			else if (scoreColumns[j]=="transformation"){
-				cell.innerHTML = "";
-				tcell = transformationCell(curRes["scoreData"]["originalCh"],curRes["scoreData"]["improvedCh"])
-				if (tcell)
-				{
-					cell.appendChild (tcell);
-				}
-			}
-			
-			curArry = improvedRMSEbyOrigFitness	[curRes["taskData"]["fitnessType"]]
-			tmpObj = {x: Number(curRes["scoreData"]["improvedFitness"]), y:Number(curRes["scoreData"]["RMSEdiff"]) }
-				if (curArry)
-					curArry.push(tmpObj)
-			
-		}*/
+
 	
 
 	var dvTable = document.getElementById("rawResultsTable");

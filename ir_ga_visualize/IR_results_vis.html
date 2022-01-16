@@ -1,13 +1,13 @@
 <html>	
 	<body>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 		<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="ir_ga_vis.css">
 		<script type="text/javascript" src="utils.js"></script>
 		<script type="text/javascript" src="./js-imagediff-master/imagediff.js"></script>
 		<script type="text/javascript" src="./jsonpath-0.8.0.js"></script>
 		<script type="text/javascript" src="chartsGenerators.js"></script>
-		<script type="text/javascript" src="resultsData.json"></script>
+		<script type="text/javascript" src="resultsData.js"></script>
 		<script type="text/javascript" src="readResultsData.js"></script>
 		
 		
@@ -16,8 +16,7 @@
 		{
 			// need to exclude shearx & scalse. the original GA doesn't work on it well, so no point to measure improvment on it
 			// also excluding "cond_ncc" since it was a personal test which didn't lead to intresting results.
-			//var relevantResults  = jsonPath(this.resultsData,"$..[?(@.fileMode != 'scale' && @.fileMode != 'shearX' && @.fitnessType != 'COND_NCC')]") 
-			var relevantResults  = jsonPath(this.resultsData,"$..[?(@.fileMode == 'rot' || @.fileMode == 'trans' || @.fileMode == 'combined')]") 
+			var relevantResults  = jsonPath(this.resultsData,"$..[?(@.fileMode != 'scale' && @.fileMode != 'shearX' && @.fitnessType != 'COND_NCC')]") 
 			console.log (relevantResults)
 			resultsDataObj = new resultsDataObject(relevantResults);
 		}

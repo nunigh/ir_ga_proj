@@ -233,11 +233,19 @@ public class Utils {
 	private static short[] diff;
 	private static short[] sensed;
 	private static short[] referenced;
-	public static void writeChromosomeImg(Chromosome ch, String folder, int island, int i, boolean original) throws IOException, ScriptException
-	{		
-		if (!CONST.WRITE_IMG)
-			return;
-		
+	public static String writeChromosomeImg(Chromosome ch, String folder, int island, int i, boolean original) throws IOException, ScriptException
+	{
+		return writeChromosomeImg (ch,folder, island, i, original, "", false);
+	}
+	public static String writeChromosomeImg(Chromosome ch, String folder, int island, int i, boolean original, String phase) throws IOException, ScriptException
+	{
+		return writeChromosomeImg (ch,folder, island, i, original, phase, false);
+	}
+	public static String writeChromosomeImg(Chromosome ch, String folder, int island, int i, boolean original, String phase,boolean force) throws IOException, ScriptException
+	{
+		if (!CONST.WRITE_IMG && !force)
+			return "";
+
 		if (SensedTransformed == null)
 		{
 			SensedTransformed = new short[original1.getWidth()*original1.getHeight()];
@@ -247,12 +255,12 @@ public class Utils {
 		}
 		//else
 		{
-			 Arrays.fill(SensedTransformed, (short)0);
-			 Arrays.fill(referenced, (short)0);
-			 Arrays.fill(diff, (short)0);
-			 Arrays.fill(sensed, (short)0);
+			Arrays.fill(SensedTransformed, (short)0);
+			Arrays.fill(referenced, (short)0);
+			Arrays.fill(diff, (short)0);
+			Arrays.fill(sensed, (short)0);
 		}
-		
+
 		/*
 		String path1 = "C:\\Users\\Sarit\\workspace\\Results\\RealDataSets\\Satellites\\CHIPS_DC_AREA\\e\\0005_0006\\etm_0005_b5.jpg";//data.path1);
 		String path2 = "C:\\Users\\Sarit\\workspace\\Results\\RealDataSets\\Satellites\\CHIPS_DC_AREA\\e\\0005_0006\\tm0_0006_b5_wind4.jpg";//data.path2);
@@ -264,16 +272,16 @@ public class Utils {
 		path2 = "C:\\Users\\Sarit\\workspace\\Results\\RealDataSets\\Satellites\\Miscellaneous\\e2.jpg";
 		path1 = "C:\\Users\\Sarit\\workspace\\Results\\RealDataSets\\Chap9\\Fig9.26a.png";
 		path2 = "C:\\Users\\Sarit\\workspace\\Results\\RealDataSets\\Chap9\\Fig9.26b.png";
- 
+
 		path1 = "C:\\Users\\Sarit\\workspace\\Results\\RealDataSets\\Satellites\\CHIPS_DC_AREA\\b\\a.jpg";//data.path1);
 		path2 = "C:\\Users\\Sarit\\workspace\\Results\\RealDataSets\\Satellites\\CHIPS_DC_AREA\\b\\a_rot.jpg";//data.path2);
-		
+
 		path1 = "C:\\Users\\Sarit\\workspace\\Results\\Example7\\6\\a.jpg";
 		path2 = "C:\\Users\\Sarit\\workspace\\Results\\Example7\\6\\b.jpg";
-		
+
 		IplImage src1 = cvLoadImage(path1);
 		IplImage src2 = cvLoadImage(path2);
-	
+
 		Utils.original1 = src1.getBufferedImage().getData();
 		Utils.original2 = src2.getBufferedImage().getData();
 		*/
@@ -281,17 +289,18 @@ public class Utils {
 		int height1 = Utils.original1.getHeight();
 		int width2 = Utils.original2.getWidth();
 		int height2 = Utils.original2.getHeight();
-			
+
 		//////////
-		
+
 		////sx = Utils.fixTransformation(sx, width1, height1, width2, height2,  0, false);
 		/////sy = Utils.fixTransformation(sy, width1, height1, width2, height2, 0, false);
-	
+
 		SensedTransformed = new short[width1*height1];
 		diff = new short[width1*height1];
 		sensed = new short[width2*height2];
 		referenced = new short[width1*height1];
-		
+		referenced = new short[width1*height1];
+
 		Raster original2 = Utils.original2.getData();
 		Raster original1 = Utils.original1.getData();
 		for (int col=0; col < width2; col++)
@@ -301,7 +310,7 @@ public class Utils {
 				sensed[(int)Math.round(getIndex(height2, col,row))] = (short) (original2.getSample(col,row, 0));
 			}
 		}
-		
+
 		for (int col=0; col <width1; col++)
 		{
 			for (int row=0; row < height1; row++)
@@ -309,11 +318,11 @@ public class Utils {
 				referenced[(int) Math.round(getIndex(height1, col,row))] = (short) (original1.getSample(col,row, 0));
 			}
 		}
-		
+
 		@SuppressWarnings("unused")
 		BufferedImage bufferedImage = new BufferedImage(width1,height1, BufferedImage.TYPE_BYTE_GRAY);
 		//WritableRaster raster = bufferedImage.getRaster();
-		
+
 		@SuppressWarnings("unused")
 		BufferedImage bufferedImagediff = new BufferedImage(width1,height1, BufferedImage.TYPE_BYTE_GRAY);
 		//WritableRaster rasterdiff = bufferedImagediff.getRaster();
@@ -325,23 +334,23 @@ public class Utils {
 		*/
 		//GeneticAlgorithm.scriptX = GeneticAlgorithm.compilingEngine.compile(sx);
 		//GeneticAlgorithm.scriptY = GeneticAlgorithm.compilingEngine.compile(sy);
-		
+
 		for (int col=0; col < width2; col++)
 		{
 			//System.out.println(String.format("col %d of %d -----------------------------",col+1,width2));
 			for (int row=0; row < height2; row++)
 			{
-							
-				
+
+
 				double[] newPos = ch.T(col, row, CONST._isCentered);
-							
+
 				//double x = GPTransformations.GetValue(sx, col, row);
 				//double y = GPTransformations.GetValue(sy, col, row);
 				//int[] newPos = new int[] {(int) Math.round(x),(int)Math.round(y)};
 				int newIndex = (int) Math.round(getIndex(height1, (int) Math.round(newPos[0]),(int) Math.round(newPos[1])));
-				
+
 				if (newPos[0] >= 0 && newPos[0] < width1 &&
-						newPos[1] >= 0 && newPos[1] < height1 && 
+						newPos[1] >= 0 && newPos[1] < height1 &&
 						newIndex >= 0 && newIndex < SensedTransformed.length)
 				{
 					//System.out.println(String.format("%d,%d,%f,%f",col, row, x,y));
@@ -352,50 +361,51 @@ public class Utils {
 					*/
 					SensedTransformed[newIndex] = sensed[(int) Math.round(getIndex(height2,col,row))];
 					diff[newIndex] = (short) Math.abs(SensedTransformed[newIndex] - referenced[newIndex]);
-					
+
 					/*short val = (short) (Utils.original2.getSample(col,row, 0));
 		            raster.setSample(newPos[0], newPos[1],0, val);//SensedTransformed[index]);
 		            rasterdiff.setSample(
-		            				newPos[0], 
+		            				newPos[0],
 		            				newPos[1],
-		            				0, 
+		            				0,
 		            				(short) (Utils.original1.getSample(newPos[0],newPos[1], 0) - val));
 		            				*/
 				}
 			}
-				
-		}		
+
+		}
 		//System.out.println(minX);
 		//System.out.println(maxX);
 		//System.out.println(minY);
 		//System.out.println(maxY);
-	
-		 String s = null;
+
+		String s = null;
 		if (original)
 		{
-		 s = String.format("%s%ssensed.jpg",folder,File.separatorChar);
-		 writeImg(sensed, width2, height2, s);
-		 
-		 s = String.format("%s%sreferenced.jpg",folder,File.separatorChar);
-		 writeImg(referenced, width1, height1, s);
+			s = String.format("%s%ssensed.jpg",folder,File.separatorChar);
+			writeImg(sensed, width2, height2, s);
+
+			s = String.format("%s%sreferenced.jpg",folder,File.separatorChar);
+			writeImg(referenced, width1, height1, s);
 		}
-		
+
 		// s = String.format("%s%s_best.jpg", "C:\\Users\\Sarit\\workspace\\Results\\SIFT",File.separatorChar);
-		
-		 //File outputfile = new File(s);
-		 //ImageIO.write(bufferedImage, "jpg", outputfile);	
-		
-		
+
+		//File outputfile = new File(s);
+		//ImageIO.write(bufferedImage, "jpg", outputfile);
+
+
 		// s = String.format("%s%s_diff.jpg","C:\\Users\\Sarit\\workspace\\Results\\SIFT",File.separatorChar);
-		
+
 		// File outputfilediff = new File(s);
-		// ImageIO.write(bufferedImagediff, "jpg", outputfilediff);	
-		 
-		 s = String.format("%s%s%d_best%d.jpg", folder,File.separatorChar, island, i);
-		 writeImg(SensedTransformed, width1, height1, s);
-		 
-		 s = String.format("%s%s%d_diff.jpg",folder,File.separatorChar, island);
-		 writeImg(diff, width1, height1, s);
+		// ImageIO.write(bufferedImagediff, "jpg", outputfilediff);
+
+		String resultPath = String.format("%s%s%d_best%d_%s.jpg", folder,File.separatorChar, island, i,phase);
+		writeImg(SensedTransformed, width1, height1, resultPath);
+
+		s = String.format("%s%s%d_diff_%s.jpg",folder,File.separatorChar, island,phase);
+		writeImg(diff, width1, height1, s);
+		return resultPath;
 	}
 
 	public static double getIndex(int height, double col, double row)

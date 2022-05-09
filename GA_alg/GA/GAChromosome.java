@@ -30,8 +30,8 @@ import Interfaces.Chromosome;
  */
 public class GAChromosome extends Chromosome {
 
-	private ITransformation _trans = null;
-	
+	public ITransformation _trans = null;
+
 	public GAChromosome()
 	{
 		super();
@@ -157,7 +157,20 @@ public class GAChromosome extends Chromosome {
 	{
 		return true;//return this.overlapPercent > CONST.MIN_OVERLAP_PERCENT;
 	}
-	
+
+
+	public void updateChromGenes()
+	{
+		_trans.updateChromGenes();
+	}
+
+
+	@Override
+	public double[] toArray() {
+		return _trans.toArray();
+	}
+
+
 	@Override
 	public double[] GetValue(double x, double y)
 	{

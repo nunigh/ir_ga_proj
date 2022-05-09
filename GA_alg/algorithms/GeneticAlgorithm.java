@@ -135,6 +135,8 @@ public class GeneticAlgorithm {
 	ExecutorService _parallelService = null;
 
 	IGeneticStrategy _geneticStrategy = null;
+
+
 	/**
 	 * initialization
 	 * 
@@ -470,7 +472,7 @@ public class GeneticAlgorithm {
 	public static int _gen = 0;
 	private boolean debug = false;
 	public long start = 0;
-	long current = 0;
+	public long current = 0;
 
 	Point[][] _SIFTDist = null;
 	boolean _fromSIFT = false;
@@ -484,7 +486,7 @@ public class GeneticAlgorithm {
 		start = System.currentTimeMillis();
 		boolean cont = true;
 		boolean cont2 = false;
-		while (cont)// ||(ch==null || ch.get_fitness()>4.8||
+		while (cont && _gen <1500)// hadar added 1500 limit// ||(ch==null || ch.get_fitness()>4.8||
 					// ch.overlapPercent<0.5 || !t || good < 10 ||
 					// fitnessUnchangedCount < 15)
 		// && (t || current - start < 10*60000) && (ch == null || current -
@@ -839,9 +841,10 @@ public class GeneticAlgorithm {
 			// {
 			// return;
 			// }
-
-		//str.append(getPrintChrom(cc));
-			//str.append('\n');
+			if (CONST.PRINT_ALL_CHROMOSOMES) {
+				str.append(getPrintChrom(cc));
+				str.append('\n');
+			}
 		}
 		
 		
@@ -1603,7 +1606,7 @@ public class GeneticAlgorithm {
 
 	
 	
-	private Chromosome GetBest(PopulationManager pop) throws Exception
+	public Chromosome GetBest(PopulationManager pop) throws Exception
 	{
 		Chromosome best = pop.GetBestChromosome();
 		if (1==0)
@@ -1912,5 +1915,20 @@ public class GeneticAlgorithm {
 			}
 		}
 	}
-	
+
+	public double calcRMSE(Chromosome chromosome) {
+		return _geneticStrategy.CalculateRMSE(_refRealPoints, _sensedRealPoints, chromosome, null, false);
+	}
+
+	public ArrayList<Point> getReferencedFeaturesPoints() {
+		return _refPoints;
+	}
+
+	public ArrayList<Point> getSensedFeaturesPoints() {
+		return _sensedPoints;
+	}
+
+	public int[] getLimits() {
+		return new int[]{_width1, _height1};
+	}
 }

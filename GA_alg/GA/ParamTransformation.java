@@ -16,7 +16,12 @@ public class ParamTransformation implements ITransformation {
 		_genes =  new IBaseTransformation[6];
 		Init();
 	}
-	
+
+	@Override
+	public void updateChromGenes() {
+
+	}
+
 	@Override
 	public void Init()
 	{
@@ -85,5 +90,10 @@ public class ParamTransformation implements ITransformation {
 		_genes[i].SetVal(t.GetVal());
 		
 	}
-	
+
+	@Override
+	public double[] toArray() {
+		return new double[0];
+	}
+
 }

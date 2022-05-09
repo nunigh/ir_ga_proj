@@ -2,13 +2,10 @@
 
 import java.awt.image.BufferedImage;
 import java.awt.image.Raster;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.Console;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.AbstractMap.SimpleEntry;
@@ -21,10 +18,7 @@ import org.opencv.core.Point;
 import org.opencv.features2d.DescriptorExtractor;
 import org.opencv.features2d.FeatureDetector;
 
-import utils.FileOption;
-import utils.GAUtils;
-import utils.InternalMode;
-import utils.Utils;
+import utils.*;
 
 import matlabcontrol.MatlabInvocationException;
 import matlabcontrol.MatlabProxyFactory;
@@ -65,25 +59,24 @@ public class Main {
 	static Mode mode = Mode.GA;
 	static InternalMode internalMode = InternalMode.SIFT;
 	
-	static FileOption fileOption = FileOption.trans;
+	static FileOption fileOption = FileOption.a;
 	
 	static boolean _simpleSIFT = true;
-	
-	static boolean useReal = false;
+
+	public static boolean useReal = true;
 	static int notUsingRealStrategy = 2;
 	static ArrayList<ArrayList<Point>> realPoints = null;
 	
 	static boolean pyramid = false;
 
 
-	static String projectPath = CONST.projectPath;
+	public static String projectPath = CONST.projectPath;
 	public static void main( String[] args) throws Exception {
 
-
-
+		FminsearchOptimizer.init();
 		//FminsearchOptimizer.HD_test_random();
 
-		//if (1==1) return;
+
 
 		String path1 = "";
 		String path2 = "";
@@ -95,7 +88,24 @@ public class Main {
 		
 		try
 		{
-		if (args.length > 0)
+			if (args.length > 0)
+			{
+				String fileOptionStr = args[0];
+				fileOption = FileOption.valueOf(fileOptionStr);
+			}
+			if (args.length > 1)
+			{
+				useReal = Boolean.valueOf(args[1]);
+				System.out.println("use real: " + useReal);
+				CONST.useReal = useReal;
+			}
+			if (args.length > 2)
+			{
+				projectPath = args[2];
+				CONST.projectPath= projectPath;
+				System.out.println("project path: " + projectPath);
+			}
+		/*if (args.length > 0)
 		{
 			path1 = args[0];
 			path2 = args[1];
@@ -127,7 +137,7 @@ public class Main {
 				}
 			}
 		}
-		else
+		else*/
 		{
 		
 			switch (fileOption) {
@@ -383,6 +393,7 @@ public class Main {
 			Utils.writeImg(im, outPath);
 		
 		}
+		System.exit(0);
 		}
 		catch (Exception ex)
 		{
@@ -424,6 +435,9 @@ public class Main {
 	{
 		Integer max = 0;
 		File base = new File(folder);
+		if (! base.exists()){
+			base.mkdirs();
+		}
 		for (File f : base.listFiles())
 		{
 			if (f.isDirectory())
@@ -937,7 +951,19 @@ public class Main {
 			alg.Log(ex.getMessage() + " # " + ex.getStackTrace(), 0);
 			throw ex;
 		}
-        System.out.println("this is quite the end");
+
+		//Chromosome winnerChromosome = alg.GetSolution();
+		Chromosome winnerChromosome = ((GeneticAlgorithm)alg).GetBest(alg.GetPop());
+
+		for (FminsearchOptimizer.Method method : FminsearchOptimizer.Method.values()) {
+
+			long beforeFminsearch = System.currentTimeMillis();
+			Chromosome winnerChromosome2 = FminsearchOptimizer.run(winnerChromosome, method, path1, path2,	alg, fileOption, output.getName(), projectPath);
+			long afterFminsearch = System.currentTimeMillis();
+			ResultsDbManager.writeResultSummaryToCSV(alg, winnerChromosome, winnerChromosome2, fileOption, method ,useReal, afterFminsearch - beforeFminsearch);
+		}
+
+		System.out.println("this is quite the end");
 		return alg.GetPop();
 	}
 	
@@ -1807,10 +1833,10 @@ public class Main {
 		readImages(outputPath, path1, path2);
 		///////////
 		SelectionMode selection = SelectionMode.TournamentSelection;
-		
 		IGeneticStrategy strategy = new GPStrategy(internalMode);;
 		GeneticAlgorithm alg = new GeneticAlgorithm(strategy, outputPath, selection, internalMode, CONST._isCentered);
 		alg.Init(null, false);
+
 		alg.Run();
 		
 		writeResult(alg.GetSolution().toString());

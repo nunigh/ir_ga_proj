@@ -4,7 +4,9 @@ import GA.Structure.Interface.IBaseTransformation;
 
 
 public interface ITransformation {
-	
+
+	void updateChromGenes();
+
 	void Init();
 
 	 ITransformation clone();
@@ -15,4 +17,6 @@ public interface ITransformation {
 	 IBaseTransformation Get(int i);
 	 int GetLength();
 	 void Set(int i, IBaseTransformation t);
+
+	double[] toArray();
 }

@@ -1,6 +1,8 @@
 <component name="libraryTable">
   <library name="windows-x86_641">
-    <CLASSES />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Documents/MATLAB/IR_opt/fminsearch4ir/for_redistribution_files_only/fminsearch4ir.jar!/" />
+    </CLASSES>
     <JAVADOC />
     <NATIVE>
       <root url="jar://$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar!/com/googlecode/javacv/cpp/windows-x86_64" />

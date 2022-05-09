@@ -66,7 +66,7 @@ public int _matches = 0;
 	public boolean get_new() {
 		return _isNew;
 	}
-	
+
 	public Chromosome() {
 		
 		_maxDiff = -1;
@@ -125,6 +125,9 @@ public int _matches = 0;
 	public abstract void Minimize();
 	public abstract void Validate();
 	public abstract boolean IsValid();
+
+	public abstract double[] toArray();
+
 	public abstract double[] GetValue(double x, double y);
 	
 	 ////////////////////////////////////////////////////////////////////

@@ -241,8 +241,13 @@ public void Validate()
 			return false;
 		
 		return true;
-	}	
-	
+	}
+
+	@Override
+	public double[] toArray() {
+		return new double[0];
+	}
+
 	public double[] GetValue(double x, double y)
 	{
 		/*

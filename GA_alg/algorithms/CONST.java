@@ -10,6 +10,7 @@ import matlabcontrol.extensions.MatlabTypeConverter;
 
 public class CONST {
 
+
 	public static boolean _isCentered = false;
 	
 	public static boolean _shouldValidate = true;
@@ -52,7 +53,9 @@ public class CONST {
 	public static double ISLANDS_PERCENT_OF_CHROMOSOMES = 0.1;
 	
 	public static boolean GA_SHUFFLE = true;
-	public static boolean WRITE_IMG = false;
+	public static boolean WRITE_IMG = false; // hadar - to change to false to optim
+	public static boolean PROFILING_MODE = true;
+	public static final boolean PRINT_ALL_CHROMOSOMES =false;
 
 	public static MatlabProxy   Myproxy = null;
 	public static MatlabTypeConverter processor = null;
@@ -62,4 +65,5 @@ public class CONST {
 	public static String projectPath_hadar = "C:\\Users\\root\\Desktop\\IR_GA\\";
 	public static String projectPath_biu = "C:\\Users\\usr\\Desktop\\IR_GA\\";
 	public static String projectPath =  projectPath_hadar;
+	public static boolean useReal;
 }

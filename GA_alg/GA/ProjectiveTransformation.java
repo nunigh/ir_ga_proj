@@ -33,9 +33,13 @@ public class ProjectiveTransformation implements ITransformation {
 		_genes =  new IBaseTransformation[8];
 		Init(tx, ty, a,b,c,d,e,f);
 	}
-	
-	
-	
+
+
+	@Override
+	public void updateChromGenes() {
+
+	}
+
 	@Override
 	public void Init()
 	{
@@ -119,5 +123,10 @@ public class ProjectiveTransformation implements ITransformation {
 		_genes[i].SetVal(t.GetVal());
 		
 	}
-	
+
+	@Override
+	public double[] toArray() {
+		return new double[0];
+	}
+
 }

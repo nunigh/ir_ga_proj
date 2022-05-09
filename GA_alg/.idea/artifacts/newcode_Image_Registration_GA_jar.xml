@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="newcode_Image_Registration_GA:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/newcode_Image_Registration_GA_jar</output-path>
+    <root id="archive" name="newcode_Image_Registration_GA.jar">
+      <element id="module-output" name="newcode_Image_Registration_GA" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/externalLibs/javacpp.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/externalLibs/javacv.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/externalLibs/opencv-2.4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/Tools/javacv-cppjars/opencv-2.4.6.0-windows-x86_64.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/externalLibs/matlabcontrol-4.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/externalLibs/javacv-windows-x86_64.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Documents/MATLAB/IR_opt/fminsearch4ir/for_redistribution_files_only/fminsearch4irDbg.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="C:/IR_GA/matlabLibs/javabuilder.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
